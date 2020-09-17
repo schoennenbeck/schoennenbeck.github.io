@@ -1,32 +1,86 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer" app>
+      <v-list dense>
+        <v-list-item link :to="{ name: 'Home' }">
+          <v-list-item-action>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link :to="{ name: 'Papers' }">
+          <v-list-item-action>
+            <v-icon>mdi-text-box-multiple-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Publications & Theses</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link :to="{ name: 'Talks' }">
+          <v-list-item-action>
+            <v-icon>mdi-teach</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Selected Talks</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link :to="{ name: 'Software' }">
+          <v-list-item-action>
+            <v-icon>mdi-folder-download</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Software</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link :to="{ name: 'About' }">
+          <v-list-item-action>
+            <v-icon>mdi-account</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>CV</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item href="/S_unit_groups">
+          <v-list-item-action>
+            <v-icon>mdi-database</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Database: S-Unit-Groups</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar app color="secondary" light>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Dr. Sebastian Schönnenbeck</v-toolbar-title>
+    </v-app-bar>
+
+    <v-main>
+      <router-view />
+    </v-main>
+    <v-footer color="primary" app>
+      <v-row justify="space-between" no-gutters>
+        <a href="http://www.math.rwth-aachen.de">
+          <span class="white--text">
+            Lehrstuhl D für Mathematik
+          </span>
+        </a>
+        <span class="white--text">&copy; {{ new Date().getFullYear() }}</span>
+      </v-row>
+    </v-footer>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+export default {
+  props: {
+    source: String
+  },
+  data: () => ({
+    drawer: null
+  })
+};
+</script>

@@ -1,0 +1,25 @@
+<html>
+
+<head>
+ <title>Unit groups of orders</title>
+</head>
+
+<body>
+ <a href="/">Lehrstuhl D f&uuml;r Mathematik</a><br>
+ <a href="/~Oliver.Braun/unitgroups">Database of unit groups</a>
+ <hr>
+
+ <b><font size=+2>Database: Unit Groups of Orders</font></b><p>
+ <b>Rational division algebras of degree 3</b><p>
+ 
+ In this table you can find MAGMA-readable files (simply download and use the "load"-command) containing our results for the unit group of a maximal order in degree 3 division algebras over the rationals.<p>
+
+ Once the file is loaded, you have a splitting field K, BB a basis of the maximal order as matrices over K, G the unit group of the maximal order as a finitely presented group and GENS the list of generators.<p>
+
+ <ul>
+ <li>A division algebra ramified at 2 and 3, of discriminant 2^6*3^6. <a href="D23">Link</a></li>
+ <li>A division algebra ramified at 2 and 5, of discriminant 2^6*5^6. <a href="D25">Link</a></li>
+ </ul>
+ 
+</body>
+</html>

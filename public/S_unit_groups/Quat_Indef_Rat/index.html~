@@ -1,0 +1,161 @@
+<html>
+
+<head>
+ <title>Unit groups of orders</title>
+</head>
+
+<body>
+ <a href="/">Lehrstuhl D f&uuml;r Mathematik</a><br>
+ <a href="/~Oliver.Braun/unitgroups">Database of unit groups</a>
+ <hr>
+
+ <b><font size=+2>Database: Unit Groups of Orders</font></b><p>
+ <b>Indefinite quaternion algebras over the rationals</b><p>
+ 
+ In this table you can find MAGMA-readable files (simply download and use the "load"-command) containing our results for the unit group of a maximal order in the quaternion algebra defined by i^2=a, j^2=b, realized in the 2-by-2 matrix ring over the real quadratic field Q(alpha), where alpha is always a square root of b<br>
+ The column "Z-discriminant" contains the Z-discriminant of the maximal order.<br>
+ The algebras are ordered by their discriminants.<p>
+
+ <table border="1">
+  <colgroup>
+    <col width="60">
+    <col width="60">
+    <col width="130">
+    <col width="100">
+  </colgroup>
+  <tr>
+    <td>a</td>
+    <td>b</td>
+    <td>Z-discriminant</td>
+    <td>Files</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>3</td>
+    <td>6</td>
+    <td><a href="">---</a></td>
+  </tr>
+  <tr>
+    <td>-3</td>
+    <td>10</td>
+    <td>10</td>
+    <td><a href="-3,10,[-10,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-2</td>
+    <td>7</td>
+    <td>14</td>
+    <td><a href="-2,7,[-7,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>15</td>
+    <td>15</td>
+    <td><a href="2,15,[-15,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-1</td>
+    <td>21</td>
+    <td>21</td>
+    <td><a href="-1,21,[-21,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-3</td>
+    <td>22</td>
+    <td>22</td>
+    <td><a href="-3,22,[-22,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-5</td>
+    <td>26</td>
+    <td>26</td>
+    <td><a href="-5,26,[-26,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-1</td>
+    <td>33</td>
+    <td>33</td>
+    <td><a href="-1,33,[-33,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-3</td>
+    <td>34</td>
+    <td>34</td>
+    <td><a href="-3,34,[-34,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-2</td>
+    <td>35</td>
+    <td>35</td>
+    <td><a href="-2,35,[-35,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-19</td>
+    <td>2</td>
+    <td>38</td>
+    <td><a href="-19,2,[-2,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>39</td>
+    <td>2</td>
+    <td>39</td>
+    <td><a href="39,2,[-2,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-3</td>
+    <td>46</td>
+    <td>46</td>
+    <td><a href="-3,46,[-46,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>51</td>
+    <td>5</td>
+    <td>51</td>
+    <td><a href="51,5,[-5,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>55</td>
+    <td>2</td>
+    <td>55</td>
+    <td><a href="55,2,[-2,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-1</td>
+    <td>57</td>
+    <td>57</td>
+    <td><a href="-1,57,[-57,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-3</td>
+    <td>58</td>
+    <td>58</td>
+    <td><a href="-3,58,[-58,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-2</td>
+    <td>31</td>
+    <td>62</td>
+    <td><a href="-2,31,[-31,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>-42</td>
+    <td>5</td>
+    <td>210</td>
+    <td><a href="-42,5,[-5,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>37</td>
+    <td>703</td>
+    <td><a href="19,37,[-37,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>37</td>
+    <td>1147</td>
+    <td><a href="31,37,[-37,0,1]">Link</a></td>
+  </tr>
+  <!-- usw. andere Zeilen der Tabelle -->
+ </table>
+</body>
+</html>
