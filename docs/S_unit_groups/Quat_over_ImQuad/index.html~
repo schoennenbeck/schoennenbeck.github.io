@@ -1,0 +1,163 @@
+<html>
+
+<head>
+ <title>Unit groups of orders</title>
+</head>
+
+<body>
+ <a href="/">Lehrstuhl D f&uuml;r Mathematik</a><br>
+ <a href="/~Oliver.Braun/unitgroups">Database of unit groups</a>
+ <hr>
+
+ <b><font size=+2>Database: Unit Groups of Orders</font></b><p>
+ <b>Quaternion algebras over imaginary quadratic number fields</b><p>
+ 
+ In this table you can find MAGMA-readable files (simply download and use the "load"-command) containing our results for the unit group of a maximal order in the quaternion algebra defined by i^2=a, j^2=b over the imaginary quadratic field Q(alpha).<br>
+ The column "Z-discriminant" contains the absolute value of the Z-discriminant of the maximal order, i.e. the norm of the discriminant ideal of the maximal order multiplied with the absolute value of the discriminant of the number field.<br>
+ The number fields are ordered by their discriminants.<p>
+
+ <table border="1">
+  <colgroup>
+    <col width="275">
+    <col width="60">
+    <col width="60">
+    <col width="130">
+    <col width="100">
+  </colgroup>
+  <tr>
+    <td>Minimal Polynomial of alpha</td>
+    <td>a</td>
+    <td>b</td>
+    <td>Z-discriminant</td>
+    <td>Files</td>
+  </tr>
+  <tr>
+    <td>x^2+3</td>
+    <td>-7</td>
+    <td>-2</td>
+    <td>147</td>
+    <td><a href="-7,-2,[3,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+3</td>
+    <td>-13</td>
+    <td>-2</td>
+    <td>507</td>
+    <td><a href="-13,-2,[3,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+1</td>
+    <td>-5</td>
+    <td>-2</td>
+    <td>100</td>
+    <td><a href="-5,-2,[1,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+7</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>28</td>
+    <td><a href="-1,-1,[7,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+7</td>
+    <td>-1</td>
+    <td>-11</td>
+    <td>847</td>
+    <td><a href="-1,-11,[7,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+7</td>
+    <td>-14</td>
+    <td>-11</td>
+    <td>3388</td>
+    <td><a href="-14,-11,[7,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+7</td>
+    <td>-1</td>
+    <td>-23</td>
+    <td>3703</td>
+    <td><a href="-1,-23,[7,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+15</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>60</td>
+    <td><a href="-1,-1,[15,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+15</td>
+    <td>-17</td>
+    <td>-31</td>
+    <td>4335</td>
+    <td><a href="-17,-31,[15,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+15</td>
+    <td>-1</td>
+    <td>-19</td>
+    <td>5415</td>
+    <td><a href="-1,-19,[15,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+5</td>
+    <td>-7</td>
+    <td>-2</td>
+    <td>980</td>
+    <td><a href="-7,-2,[5,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+31</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>124</td>
+    <td><a href="-1,-1,[31,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+55</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>220</td>
+    <td><a href="-1,-1,[55,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+79</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>316</td>
+    <td><a href="-1,-1,[79,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+95</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>380</td>
+    <td><a href="-1,-1,[95,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+103</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>412</td>
+    <td><a href="-1,-1,[103,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+111</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>444</td>
+    <td><a href="-1,-1,[111,0,1]">Link</a></td>
+  </tr>
+  <tr>
+    <td>x^2+255</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>1020</td>
+    <td><a href="-1,-1,[255,0,1]">Link</a></td>
+  </tr>
+  <!-- usw. andere Zeilen der Tabelle -->
+ </table>
+</body>
+</html>

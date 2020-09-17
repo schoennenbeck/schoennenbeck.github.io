@@ -1,0 +1,20 @@
+<html>
+
+<head>
+ <title>Unit groups of orders</title>
+</head>
+
+<body>
+ <a href="/">Lehrstuhl D f&uuml;r Mathematik</a><br>
+ <a href="/~Oliver.Braun/unitgroups">Database of unit groups</a>
+ <hr>
+
+ <b><font size=+2>Database: Unit Groups of Orders</font></b><p>
+ This is a joint project by <a href="/~Oliver.Braun">Oliver Braun</a>, <a href="http://www.math.u-bordeaux1.fr/~rcoulang/">Renaud Coulangeon</a>, <a href="/~Gabriele.Nebe">Gabriele Nebe</a> and <a href="/~Sebastian.Schoennenbeck">Sebastian Sch&ouml;nnenbeck</a>. The database contains generators and presentations of the unit groups of certain orders in various types of simple rational algebras of small degree.<p>
+ <ul>
+ <li><b><a href="./imquad">Quaternion algebras over imaginary quadratic number fields</a></b></li>
+ <li><b><a href="./indef">Indefinite quaternion algebras over the rationals</a></b></li>
+ <li><b><a href="./GLimquad">Matrix rings over imaginary quadratic number fields</a></b></li>
+ <li><b><a href="./deg3">Rational division algebras of degree 3</a></b></li>
+</body>
+</html>
