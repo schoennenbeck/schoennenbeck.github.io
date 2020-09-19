@@ -5,6 +5,7 @@ import Papers from "../views/Papers.vue";
 import Talks from "../views/Talks.vue";
 import About from "../views/About.vue";
 import Software from "../views/Software.vue";
+import Research from "../views/Research.vue";
 
 Vue.use(VueRouter);
 
@@ -13,6 +14,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/research",
+    name: "Research",
+    component: Research
   },
   {
     path: "/talks",
@@ -37,7 +43,8 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: "history"
 });
 
 export default router;

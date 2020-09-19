@@ -4,12 +4,18 @@
       <v-col cols="7">
         <v-card>
           <v-card-text>
-            I no longer work at RWTH Aachen University and now work as a Senior
-            Machine Learning Specialist focussing on deep learning approaches to
-            natural language processing. I can be reached through the following
-            channels:
+            I am a Machine Learning Specialist working at Comma Soft in Bonn
+            covering the whole chain from use case ideation and assessment, over
+            the implementation and training process to putting the model into
+            production. Primarily working on deep learning approaches to natural
+            language processing but also interested in all other applications of
+            machine learning / AI. I hold a PhD in mathematics from RWTH Aachen
+            University and used to work on algorithmic algebraic number theory
+            and its applications in quantum computing.
           </v-card-text>
+
           <v-list>
+            <v-subheader> Contact: </v-subheader>
             <v-list-item :href="'mailto:schoennenbeck@gmail.com'">
               <v-list-item-action>
                 <v-icon>mdi-email</v-icon>
@@ -18,6 +24,7 @@
                 <v-list-item-title>Mail</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
+
             <v-list-item :href="'https://github.com/schoennenbeck/'">
               <v-list-item-action>
                 <v-icon>mdi-github</v-icon>
@@ -30,6 +37,7 @@
                 </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
+
             <v-list-item
               :href="
                 'https://www.linkedin.com/in/sebastian-schönnenbeck-71a5a671'
@@ -45,19 +53,19 @@
                 </v-list-item-subtitle>
               </v-list-item-content>
             </v-list-item>
-          </v-list>
 
-          <v-list-item :href="'https://twitter.com/Homomorphiesatz'">
-            <v-list-item-action>
-              <v-icon>mdi-twitter</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>Twitter</v-list-item-title>
-              <v-list-item-subtitle
-                >Follow me on Twitter.
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
+            <v-list-item :href="'https://twitter.com/Homomorphiesatz'">
+              <v-list-item-action>
+                <v-icon>mdi-twitter</v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title>Twitter</v-list-item-title>
+                <v-list-item-subtitle
+                  >Follow me on Twitter.
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
         </v-card>
       </v-col>
       <v-col cols="1" />
