@@ -1,0 +1,140 @@
+/* ------------------------------------------------------------------ *
+ *  Design tokens
+ * ------------------------------------------------------------------ */
+:root {
+  --brand: #00549f; /* RWTH blue, refreshed        */
+  --brand-strong: #003d75;
+  --brand-soft: #e7f0f9;
+  --accent: #a11035; /* bordeaux                    */
+
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --border: #e2e6ec;
+  --text: #1b2430;
+  --text-muted: #5c6672;
+
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.04),
+    0 8px 24px rgba(16, 24, 40, 0.06);
+  --radius: 14px;
+  --radius-sm: 9px;
+
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+
+  --sidebar-w: 264px;
+  --content-max: 920px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #4a9fe0;
+    --brand-strong: #7bb8ea;
+    --brand-soft: #16283a;
+    --accent: #e0688a;
+
+    --bg: #0f141b;
+    --surface: #171e27;
+    --surface-2: #1e2731;
+    --border: #2a333f;
+    --text: #e7ecf2;
+    --text-muted: #9aa5b1;
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ *  Reset & base
+ * ------------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(1.7rem, 1.2rem + 2vw, 2.4rem);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ------------------------------------------------------------------ *
+ *  Reusable primitives
+ * ------------------------------------------------------------------ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.page {
+  animation: fade-in 0.35s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--brand);
+  margin-bottom: 0.6rem;
+}
+
+.muted {
+  color: var(--text-muted);
+}

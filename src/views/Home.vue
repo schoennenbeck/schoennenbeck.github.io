@@ -1,94 +1,153 @@
+<script setup>
+import Icon from "@/components/Icon.vue";
+import profile from "@/assets/Images/Profilbild.jpg";
+
+const contacts = [
+  {
+    icon: "mail",
+    label: "Mail",
+    sub: "schoennenbeck@gmail.com",
+    href: "mailto:schoennenbeck@gmail.com"
+  },
+  {
+    icon: "github",
+    label: "GitHub",
+    sub: "Implementations of published algorithms and personal projects.",
+    href: "https://github.com/schoennenbeck/"
+  },
+  {
+    icon: "linkedin",
+    label: "LinkedIn",
+    sub: "Connect with me on LinkedIn.",
+    href: "https://www.linkedin.com/in/sebastian-schönnenbeck-71a5a671"
+  },
+  {
+    icon: "twitter",
+    label: "Twitter",
+    sub: "Follow me on Twitter.",
+    href: "https://twitter.com/Homomorphiesatz"
+  }
+];
+</script>
+
 <template>
-  <v-container>
-    <v-row>
-      <v-col cols="7">
-        <v-card>
-          <v-card-text>
-            I am a Machine Learning Specialist working at Comma Soft in Bonn
-            covering the whole chain from use case ideation and assessment, over
-            the implementation and training process to putting the model into
-            production. Primarily working on deep learning approaches to natural
-            language processing but also interested in all other applications of
-            machine learning / AI. I hold a PhD in mathematics from RWTH Aachen
-            University and used to work on algorithmic algebraic number theory
-            and its applications in quantum computing.
-          </v-card-text>
+  <div class="page home">
+    <section class="hero">
+      <div class="hero__text">
+        <p class="eyebrow">Machine Learning · Mathematics</p>
+        <h1>Sebastian Schönnenbeck</h1>
+        <p class="lead">
+          I am a Machine Learning Specialist working at Comma Soft in Bonn,
+          covering the whole chain from use case ideation and assessment, over
+          the implementation and training process, to putting the model into
+          production. I primarily work on deep learning approaches to natural
+          language processing, but I am interested in all other applications of
+          machine learning and AI. I hold a PhD in mathematics from RWTH Aachen
+          University and used to work on algorithmic algebraic number theory and
+          its applications in quantum computing.
+        </p>
+      </div>
+      <div class="hero__photo">
+        <img :src="profile" alt="Portrait of Sebastian Schönnenbeck" />
+      </div>
+    </section>
 
-          <v-list>
-            <v-subheader> Contact: </v-subheader>
-            <v-list-item :href="'mailto:schoennenbeck@gmail.com'">
-              <v-list-item-action>
-                <v-icon>mdi-email</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Mail</v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-
-            <v-list-item :href="'https://github.com/schoennenbeck/'">
-              <v-list-item-action>
-                <v-icon>mdi-github</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Github</v-list-item-title>
-                <v-list-item-subtitle
-                  >Implementations of some of the published algorithms as well
-                  as personal projects.
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-
-            <v-list-item
-              :href="
-                'https://www.linkedin.com/in/sebastian-schönnenbeck-71a5a671'
-              "
-            >
-              <v-list-item-action>
-                <v-icon>mdi-linkedin</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Linkedin</v-list-item-title>
-                <v-list-item-subtitle
-                  >Connect with me on Linkedin.
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-
-            <v-list-item :href="'https://twitter.com/Homomorphiesatz'">
-              <v-list-item-action>
-                <v-icon>mdi-twitter</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>Twitter</v-list-item-title>
-                <v-list-item-subtitle
-                  >Follow me on Twitter.
-                </v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list>
-        </v-card>
-      </v-col>
-      <v-col cols="1" />
-      <v-col cols="4">
-        <v-img
-          alt="Profile picture"
-          src="../assets/Images/Profilbild.jpg"
-          max-height="300"
-          max-width="300"
-          contain
-          :style="{
-            'border-style': 'solid',
-            'border-radius': '5px',
-            'border-color': $vuetify.theme.themes.light.primary
-          }"
-        />
-      </v-col>
-    </v-row>
-  </v-container>
+    <section class="contact card">
+      <h2>Get in touch</h2>
+      <ul class="contact__list">
+        <li v-for="c in contacts" :key="c.label">
+          <a :href="c.href" target="_blank" rel="noopener">
+            <span class="contact__icon"><Icon :name="c.icon" /></span>
+            <span class="contact__body">
+              <span class="contact__label">{{ c.label }}</span>
+              <span class="contact__sub muted">{{ c.sub }}</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
 </template>
 
-<script>
-export default {
-  name: "Home"
-};
-</script>
+<style scoped>
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.lead {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  margin: 0;
+}
+.hero__photo img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 3px solid var(--surface);
+  outline: 1px solid var(--border);
+}
+
+.contact {
+  padding: 1.75rem;
+}
+.contact h2 {
+  margin-top: 0;
+}
+.contact__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.contact__list a {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+}
+.contact__list a:hover {
+  background: var(--surface-2);
+}
+.contact__icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 1.2rem;
+  flex: none;
+}
+.contact__body {
+  display: flex;
+  flex-direction: column;
+}
+.contact__label {
+  font-weight: 600;
+}
+.contact__sub {
+  font-size: 0.88rem;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .hero__photo {
+    order: -1;
+    justify-self: center;
+  }
+}
+</style>

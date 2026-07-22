@@ -1,7 +1,11 @@
 .DS_Store
 node_modules
-/dist
 
+# Build output (published by the GitHub Actions workflow, not committed)
+dist
+
+# Vite cache
+.vite
 
 # local env files
 .env.local

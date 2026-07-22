@@ -1,34 +1,38 @@
+<script setup>
+import { software } from "@/assets/software.js";
+import Icon from "@/components/Icon.vue";
+
+const resolve = link => import.meta.env.BASE_URL + link.replace(/^\//, "");
+</script>
+
 <template>
-  <span id="software">
-    <v-list>
-      <v-list-item v-for="s in software" :key="s.name">
-        <v-list-item-action>
-          <v-icon @click="followLink(s.link)">mdi-download</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>{{ s.name }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </span>
+  <div class="page">
+    <p class="eyebrow">Research</p>
+    <h1>Software</h1>
+    <p class="muted intro">
+      A selection of software packages developed during my studies. Each link
+      downloads a compressed archive.
+    </p>
+
+    <ul class="list card">
+      <li v-for="s in software" :key="s.name">
+        <a :href="resolve(s.link)">
+          <span class="list__icon"><Icon name="download" /></span>
+          <span class="list__body">
+            <span class="list__title">{{ s.name }}</span>
+          </span>
+          <span class="list__go"><Icon name="download" /></span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 
-<script>
-import { software } from "@/assets/software.js";
-export default {
-  name: "Software",
-  data() {
-    return {
-      software: software,
-      publicPath: process.env.BASE_URL
-    };
-  },
-  components: {},
-  methods: {
-    followLink(link) {
-      let localLink = `${this.publicPath}${link.slice(1)}`;
-      window.location.href = localLink;
-    }
-  }
-};
-</script>
+<style scoped>
+@import "@/assets/list.css";
+.intro {
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 60ch;
+}
+</style>

@@ -1,25 +1,9 @@
 #!/usr/bin/env sh
 
-# abort on errors
+# Deployment is handled by GitHub Actions (.github/workflows/deploy.yml):
+# every push to main builds the site and publishes it to GitHub Pages.
+# This script is just a convenience wrapper that pushes the current branch.
+
 set -e
-git checkout master
-# build
-npm run build
 
-# navigate into the build output directory
-# cd dist
-
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
-# git init
-git add docs/*
-git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io
 git push
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-
-cd -

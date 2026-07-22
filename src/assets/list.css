@@ -1,0 +1,49 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+.list li + li {
+  border-top: 1px solid var(--border);
+}
+.list a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 0.85rem;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+}
+.list a:hover {
+  background: var(--surface-2);
+}
+.list__icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  flex: none;
+}
+.list__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.list__title {
+  font-weight: 600;
+}
+.list__sub {
+  font-size: 0.86rem;
+}
+.list__go {
+  margin-left: auto;
+  color: var(--text-muted);
+  flex: none;
+}
+.list a:hover .list__go {
+  color: var(--brand);
+}

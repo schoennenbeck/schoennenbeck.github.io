@@ -1,37 +1,30 @@
+<script setup>
+import { talks } from "@/assets/talks.js";
+import Icon from "@/components/Icon.vue";
+
+const resolve = link => import.meta.env.BASE_URL + link.replace(/^\//, "");
+</script>
+
 <template>
-  <span id="talks">
-    <v-list>
-      <v-list-item v-for="talk in talks" :key="talk.title">
-        <v-list-item-action>
-          <v-icon @click="followLink(talk.link)">mdi-pdf-box</v-icon>
-        </v-list-item-action>
-        <v-list-item-content>
-          <v-list-item-title>{{ talk.title }}</v-list-item-title>
-          <v-list-item-subtitle
-            >{{ talk.occasion }}, {{ talk.time }}
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </span>
+  <div class="page">
+    <p class="eyebrow">Research</p>
+    <h1>Selected Talks</h1>
+
+    <ul class="list card">
+      <li v-for="talk in talks" :key="talk.title">
+        <a :href="resolve(talk.link)" target="_blank" rel="noopener">
+          <span class="list__icon"><Icon name="file" /></span>
+          <span class="list__body">
+            <span class="list__title">{{ talk.title }}</span>
+            <span class="list__sub muted">{{ talk.occasion }} · {{ talk.time }}</span>
+          </span>
+          <span class="list__go"><Icon name="external" /></span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 
-<script>
-import { talks } from "@/assets/talks.js";
-export default {
-  name: "Talks",
-  data() {
-    return {
-      talks: talks,
-      publicPath: process.env.BASE_URL
-    };
-  },
-  components: {},
-  methods: {
-    followLink(link) {
-      let localLink = `${this.publicPath}${link.slice(1)}`;
-      window.location.href = localLink;
-    }
-  }
-};
-</script>
+<style scoped>
+@import "@/assets/list.css";
+</style>

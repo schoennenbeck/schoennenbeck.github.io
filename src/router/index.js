@@ -1,50 +1,51 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
-import Papers from "../views/Papers.vue";
-import Talks from "../views/Talks.vue";
-import About from "../views/About.vue";
-import Software from "../views/Software.vue";
-import Research from "../views/Research.vue";
-
-Vue.use(VueRouter);
 
 const routes = [
+  { path: "/", name: "Home", component: Home, meta: { title: "Home" } },
   {
-    path: "/",
-    name: "Home",
-    component: Home
+    path: "/about",
+    name: "About",
+    component: () => import("../views/About.vue"),
+    meta: { title: "CV" }
   },
   {
     path: "/research",
     name: "Research",
-    component: Research
-  },
-  {
-    path: "/talks",
-    name: "Talks",
-    component: Talks
-  },
-  {
-    path: "/software",
-    name: "Software",
-    component: Software
+    component: () => import("../views/Research.vue"),
+    meta: { title: "Research" }
   },
   {
     path: "/papers",
     name: "Papers",
-    component: Papers
+    component: () => import("../views/Papers.vue"),
+    meta: { title: "Publications & Theses" }
   },
   {
-    path: "/about",
-    name: "About",
-    component: About
+    path: "/talks",
+    name: "Talks",
+    component: () => import("../views/Talks.vue"),
+    meta: { title: "Talks" }
+  },
+  {
+    path: "/software",
+    name: "Software",
+    component: () => import("../views/Software.vue"),
+    meta: { title: "Software" }
   }
 ];
 
-const router = new VueRouter({
+const router = createRouter({
+  history: createWebHashHistory(),
   routes,
-  mode: "hash"
+  scrollBehavior() {
+    return { top: 0 };
+  }
+});
+
+router.afterEach(to => {
+  const base = "Sebastian Schönnenbeck";
+  document.title = to.meta.title ? `${to.meta.title} · ${base}` : base;
 });
 
 export default router;
