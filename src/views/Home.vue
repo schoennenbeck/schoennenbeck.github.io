@@ -4,12 +4,6 @@ import profile from "@/assets/Images/Profilbild.jpg";
 
 const contacts = [
   {
-    icon: "mail",
-    label: "Mail",
-    sub: "schoennenbeck@gmail.com",
-    href: "mailto:schoennenbeck@gmail.com"
-  },
-  {
     icon: "github",
     label: "GitHub",
     sub: "Implementations of published algorithms and personal projects.",
