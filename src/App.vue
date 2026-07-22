@@ -56,7 +56,6 @@ const year = new Date().getFullYear();
     <!-- Sidebar / drawer -->
     <aside class="sidebar" :class="{ 'sidebar--open': drawer }">
       <div class="brand">
-        <div class="brand__mark">SS</div>
         <div class="brand__name">Sebastian Schönnenbeck</div>
         <div class="brand__role">AI · MLOps · Mathematics</div>
       </div>
