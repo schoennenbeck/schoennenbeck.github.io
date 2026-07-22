@@ -57,6 +57,9 @@ const paths = {
     "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"
   ],
   activity: ["M22 12h-4l-3 9L9 3l-3 9H2"],
+  strava: [
+    "M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"
+  ],
   camera: [
     "M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z",
     "M12 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
@@ -65,6 +68,10 @@ const paths = {
   close: ["M18 6 6 18", "M6 6l12 12"]
 };
 
+// Brand logos are solid glyphs, not Feather-style strokes, so they render
+// filled instead of outlined.
+const filled = new Set(["strava"]);
+
 defineProps({ name: { type: String, required: true } });
 </script>
 
@@ -72,8 +79,8 @@ defineProps({ name: { type: String, required: true } });
   <svg
     class="icon"
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
+    :fill="filled.has(name) ? 'currentColor' : 'none'"
+    :stroke="filled.has(name) ? 'none' : 'currentColor'"
     stroke-width="1.8"
     stroke-linecap="round"
     stroke-linejoin="round"

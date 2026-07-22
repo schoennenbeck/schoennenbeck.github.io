@@ -3,7 +3,7 @@ import Icon from "@/components/Icon.vue";
 
 const links = [
   {
-    icon: "activity",
+    icon: "strava",
     title: "Strava",
     sub: "Follow my activities, routes, and training on Strava.",
     href: "https://www.strava.com/athletes/38446193"
