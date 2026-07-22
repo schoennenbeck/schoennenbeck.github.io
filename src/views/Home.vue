@@ -73,7 +73,7 @@ const contacts = [
 <style scoped>
 .hero {
   display: grid;
-  grid-template-columns: 1fr 220px;
+  grid-template-columns: 1fr 240px;
   gap: 2.5rem;
   align-items: center;
   margin-bottom: 2.5rem;
@@ -84,9 +84,10 @@ const contacts = [
   margin: 0;
 }
 .hero__photo img {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 300px;
   object-fit: cover;
+  object-position: center 25%;
   border-radius: 20px;
   box-shadow: var(--shadow);
   border: 3px solid var(--surface);
