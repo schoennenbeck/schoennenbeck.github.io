@@ -58,7 +58,7 @@ const year = new Date().getFullYear();
       <div class="brand">
         <div class="brand__mark">SS</div>
         <div class="brand__name">Sebastian Schönnenbeck</div>
-        <div class="brand__role">Machine Learning · Mathematics</div>
+        <div class="brand__role">AI · MLOps · Mathematics</div>
       </div>
 
       <nav class="nav">

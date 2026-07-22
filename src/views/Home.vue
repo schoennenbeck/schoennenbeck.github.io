@@ -22,10 +22,10 @@ const contacts = [
     href: "https://www.linkedin.com/in/sebastian-schönnenbeck-71a5a671"
   },
   {
-    icon: "twitter",
-    label: "Twitter",
-    sub: "Follow me on Twitter.",
-    href: "https://twitter.com/Homomorphiesatz"
+    icon: "bluesky",
+    label: "Bluesky",
+    sub: "Follow me on Bluesky.",
+    href: "https://bsky.app/profile/Homomorphiesatz.bsky.social"
   }
 ];
 </script>
