@@ -18,6 +18,14 @@ const nav = [
   { to: { name: "Home" }, label: "Home", icon: "home" },
   { to: { name: "About" }, label: "CV", icon: "user" },
   {
+    label: "Interests",
+    icon: "heart",
+    children: [
+      { to: { name: "Running" }, label: "Running", icon: "activity" },
+      { to: { name: "Photography" }, label: "Photography", icon: "camera" }
+    ]
+  },
+  {
     label: "Research",
     icon: "layers",
     children: [

@@ -10,6 +10,18 @@ const routes = [
     meta: { title: "CV" }
   },
   {
+    path: "/running",
+    name: "Running",
+    component: () => import("../views/Running.vue"),
+    meta: { title: "Running" }
+  },
+  {
+    path: "/photography",
+    name: "Photography",
+    component: () => import("../views/Photography.vue"),
+    meta: { title: "Photography" }
+  },
+  {
     path: "/research",
     name: "Research",
     component: () => import("../views/Research.vue"),
