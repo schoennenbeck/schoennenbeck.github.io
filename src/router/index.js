@@ -37,7 +37,7 @@ const router = createRouter({
   }
 });
 
-router.afterEach(to => {
+router.afterEach((to) => {
   const base = "Sebastian Schönnenbeck";
   document.title = to.meta.title ? `${to.meta.title} · ${base}` : base;
 });

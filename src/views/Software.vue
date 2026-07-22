@@ -2,7 +2,7 @@
 import { software } from "@/assets/software.js";
 import Icon from "@/components/Icon.vue";
 
-const resolve = link => import.meta.env.BASE_URL + link.replace(/^\//, "");
+const resolve = (link) => import.meta.env.BASE_URL + link.replace(/^\//, "");
 </script>
 
 <template>

@@ -38,7 +38,14 @@ const link = computed(() => {
     <div v-if="collaborators.length" class="pub__collab">
       <span class="muted">Joint work with:</span>
       <template v-for="c in collaborators" :key="c.name">
-        <a v-if="c.link" :href="c.link" target="_blank" rel="noopener" class="chip">{{ c.name }}</a>
+        <a
+          v-if="c.link"
+          :href="c.link"
+          target="_blank"
+          rel="noopener"
+          class="chip"
+          >{{ c.name }}</a
+        >
         <span v-else class="chip chip--static">{{ c.name }}</span>
       </template>
     </div>

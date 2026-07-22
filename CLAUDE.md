@@ -6,16 +6,31 @@ backend.
 
 ## Commands
 
+A [Taskfile](Taskfile.yaml) (go-task) wraps the common workflows; every
+task also has a plain `npm run` equivalent if Task isn't installed.
+
 ```sh
-npm install      # install dependencies
-npm run dev      # dev server with HMR
-npm run build    # production build -> dist/
-npm run preview  # serve the production build locally
+task install       # or: npm install    — install dependencies
+task dev           # or: npm run dev     — dev server with HMR
+task build         # or: npm run build   — production build -> dist/
+task preview       # or: npm run preview — serve the production build
+task format        # prettier --write .  — auto-format everything
+task format:check  # prettier --check .  — verify formatting (no writes)
+task lint          # eslint . --fix      — lint and auto-fix
+task lint:check    # eslint .            — lint, no fixes
+task check         # format:check + lint:check (what CI runs)
 ```
 
-There is no linter/formatter and no test suite configured. Code style is
-plain 2-space-indented JS/Vue with double-quoted strings (matches the
-existing files — keep it consistent).
+**Formatting and linting** are configured (there is still no test suite):
+
+- **Prettier** ([.prettierrc.json](.prettierrc.json)) enforces the house
+  style — 2-space indent, double quotes, semicolons, no trailing commas,
+  80-col. Run `task format` before committing; don't hand-fight it.
+- **ESLint 10** flat config ([eslint.config.js](eslint.config.js)) —
+  `@eslint/js` + `eslint-plugin-vue` recommended, with `eslint-config-prettier`
+  last so ESLint never argues formatting with Prettier.
+  `vue/multi-word-component-names` is intentionally off (route views and
+  `Icon`/`Publication` use single-word names by design).
 
 ## Architecture
 
@@ -69,10 +84,13 @@ existing files — keep it consistent).
 
 ## Deployment
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds
-and publishes `dist/` to GitHub Pages. **`dist/` is git-ignored and never
-committed** (the pre-migration setup committed a `docs/` folder — that is
-gone). Repo setting: Settings → Pages → Source = **GitHub Actions**.
+Pushing to `main` triggers `.github/workflows/deploy.yml`. It first runs a
+`check` job (`npm run format:check` + `lint:check`); the `build` job
+`needs` it, so a formatting or lint failure blocks the deploy. On success
+`build` publishes `dist/` to GitHub Pages. **`dist/` is git-ignored and
+never committed** (the pre-migration setup committed a `docs/` folder —
+that is gone). Repo setting: Settings → Pages → Source = **GitHub
+Actions**.
 
 ## Conventions & gotchas
 

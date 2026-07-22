@@ -26,12 +26,12 @@ const links = [
     <div class="grid">
       <div class="card intro">
         <p class="muted">
-          I formerly worked at the Lehrstuhl für Algebra und Zahlentheorie
-          (back then called "Lehrstuhl D für Mathematik") at RWTH Aachen
-          University. My main area of research was algorithmic algebraic number
-          theory. On this homepage you can find links to my publications and
-          theses, some of the software I developed during my studies, and a
-          database for S-Unit-Groups of orders.
+          I formerly worked at the Lehrstuhl für Algebra und Zahlentheorie (back
+          then called "Lehrstuhl D für Mathematik") at RWTH Aachen University.
+          My main area of research was algorithmic algebraic number theory. On
+          this homepage you can find links to my publications and theses, some
+          of the software I developed during my studies, and a database for
+          S-Unit-Groups of orders.
         </p>
 
         <h2>Selected links</h2>

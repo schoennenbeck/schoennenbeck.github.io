@@ -34,17 +34,18 @@ const contacts = [
   <div class="page home">
     <section class="hero">
       <div class="hero__text">
-        <p class="eyebrow">Machine Learning · Mathematics</p>
+        <p class="eyebrow">AI · MLOps · Mathematics</p>
         <h1>Sebastian Schönnenbeck</h1>
         <p class="lead">
-          I am a Machine Learning Specialist working at Comma Soft in Bonn,
-          covering the whole chain from use case ideation and assessment, over
-          the implementation and training process, to putting the model into
-          production. I primarily work on deep learning approaches to natural
-          language processing, but I am interested in all other applications of
-          machine learning and AI. I hold a PhD in mathematics from RWTH Aachen
-          University and used to work on algorithmic algebraic number theory and
-          its applications in quantum computing.
+          I am a Principal Consultant and Developer for AI & Data Science
+          working at Comma Soft in Bonn, covering the entire data lifecycle from
+          ideation and use case assessment to implementing and training machine
+          learning models, building robust and scalable services, and deploying
+          them into production. Lately I have primarily been interested in the
+          operational integration of LLMs and running open weight models on
+          internal and cloud-based infrastructure. I hold a PhD in mathematics
+          from RWTH Aachen University and used to work on algorithmic algebraic
+          number theory and its applications in quantum computing.
         </p>
       </div>
       <div class="hero__photo">

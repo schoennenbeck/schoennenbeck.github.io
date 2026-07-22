@@ -63,11 +63,7 @@ const year = new Date().getFullYear();
 
       <nav class="nav">
         <template v-for="item in nav" :key="item.label">
-          <router-link
-            v-if="item.to"
-            :to="item.to"
-            class="nav__link"
-          >
+          <router-link v-if="item.to" :to="item.to" class="nav__link">
             <Icon :name="item.icon" />
             <span>{{ item.label }}</span>
           </router-link>
@@ -86,11 +82,7 @@ const year = new Date().getFullYear();
                 <Icon :name="child.icon" />
                 <span>{{ child.label }}</span>
               </router-link>
-              <a
-                v-else
-                :href="child.href"
-                class="nav__link nav__link--child"
-              >
+              <a v-else :href="child.href" class="nav__link nav__link--child">
                 <Icon :name="child.icon" />
                 <span>{{ child.label }}</span>
               </a>
