@@ -1,5 +1,35 @@
 let papers = [
   {
+    title: "Multi-qubit circuit synthesis and Hermitian lattices",
+    link: "https://arxiv.org/abs/2405.19302",
+    year: "2024",
+    journal: "Preprint",
+    collaborators: [
+      {
+        name: "Vadym Kliuchnikov",
+        link: "https://www.linkedin.com/in/vadym-kl/"
+      }
+    ]
+  },
+  {
+    title: "Stabilizer operators and Barnes-Wall lattices",
+    link: "https://arxiv.org/abs/2404.17677",
+    year: "2024",
+    journal: "Preprint",
+    collaborators: [
+      {
+        name: "Vadym Kliuchnikov",
+        link: "https://www.linkedin.com/in/vadym-kl/"
+      }
+    ]
+  },
+  {
+    title: "Computing S-unit groups of orders",
+    link: "https://arxiv.org/abs/1710.01517",
+    year: "2021",
+    journal: "Int. J. Number Theory"
+  },
+  {
     title: "Automorphic Forms on Feit's Hermitian Lattices",
     link: "https://arxiv.org/abs/1804.05884",
     year: "2019",
@@ -10,12 +40,6 @@ let papers = [
         link: "http://www.neil-dummigan.staff.shef.ac.uk/"
       }
     ]
-  },
-  {
-    title: "Computing S-unit groups of orders",
-    link: "https://arxiv.org/abs/1710.01517",
-    year: "",
-    journal: "to appear in Int. J. Number Theory"
   },
   {
     title:

@@ -14,7 +14,7 @@ import Publication from "@/components/Publication.vue";
         <p class="muted">
           The links below are for the preprint versions of the articles, which
           may differ slightly from the published ones. The published versions
-          are available upon request (or, as usual, via sci-hub).
+          are available upon request (or at the usual sources 😉).
         </p>
       </div>
       <Publication v-for="p in papers" :key="p.title" :info="p" />
