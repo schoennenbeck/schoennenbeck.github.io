@@ -30,9 +30,8 @@ const links = [
           (back then called "Lehrstuhl D für Mathematik") at RWTH Aachen
           University. My main area of research was algorithmic algebraic number
           theory. On this homepage you can find links to my publications and
-          theses, slides for some selected talks, some of the software I
-          developed during my studies, and a database for S-Unit-Groups of
-          orders.
+          theses, some of the software I developed during my studies, and a
+          database for S-Unit-Groups of orders.
         </p>
 
         <h2>Selected links</h2>

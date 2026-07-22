@@ -22,12 +22,6 @@ const routes = [
     meta: { title: "Publications & Theses" }
   },
   {
-    path: "/talks",
-    name: "Talks",
-    component: () => import("../views/Talks.vue"),
-    meta: { title: "Talks" }
-  },
-  {
     path: "/software",
     name: "Software",
     component: () => import("../views/Software.vue"),

@@ -23,7 +23,6 @@ const nav = [
     children: [
       { to: { name: "Research" }, label: "Overview", icon: "book" },
       { to: { name: "Papers" }, label: "Publications & Theses", icon: "file" },
-      { to: { name: "Talks" }, label: "Selected Talks", icon: "mic" },
       { to: { name: "Software" }, label: "Software", icon: "download" },
       {
         href: import.meta.env.BASE_URL + "S_unit_groups/",
