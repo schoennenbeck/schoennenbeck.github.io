@@ -22,36 +22,34 @@ const photos: Photo[] = [
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/DSCF7972.JPG",
-    year: "2025"
+    year: "2025",
+    location: "Bonn (Germany)"
   },
   {
-    link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/DSCF8034.JPG",
-    year: "2025"
+    link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/DSCF7906.jpg",
+    year: "2025",
+    location: "Bonn (Germany)"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/DSCF8122.JPG",
-    year: "2025"
+    year: "2025",
+    location: "Bonn (Germany)"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1476.jpg",
-    year: "2025"
+    year: "2025",
+    location: "Ferpècle (Switzerland)"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1534.jpg",
-    year: "2025"
+    year: "2025",
+    title: "Dent blanche dans la soirée",
+    location: "Les Haudères (Switzerland)"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1714.jpg",
-    year: "2025"
-  },
-  {
-    link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/bafkreifqmirzzr3tdi4jh7uroafnmaooppx4t22a3w5txfno4iozet5yqi.jpg"
-  },
-  {
-    link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/bafkreigzjopzqubiwnxrlmx4tiborvhla37tubegazct6dyul7rrk4r3uu.jpg"
-  },
-  {
-    link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/bafkreih52lec6gk7g2stnhgiu3z7kovlzqq6minnchqeemg5w7o4tb77cu.jpg"
+    year: "2025",
+    location: "Zermatt (Switzerland)"
   }
 ];
 
