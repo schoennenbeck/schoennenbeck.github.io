@@ -1,4 +1,9 @@
-let software = [
+export interface Software {
+  name: string;
+  link: string;
+}
+
+const software: Software[] = [
   {
     name: "Algorithms for computing Hecke operators on algebraic modular forms for symplectic groups",
     link: "/software/AlgModFormsSP.tar.gz"

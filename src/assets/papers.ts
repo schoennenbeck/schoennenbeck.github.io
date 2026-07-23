@@ -1,4 +1,17 @@
-let papers = [
+export interface Collaborator {
+  name: string;
+  link?: string;
+}
+
+export interface Publication {
+  title: string;
+  link?: string;
+  year?: string;
+  journal?: string;
+  collaborators?: Collaborator[];
+}
+
+const papers: Publication[] = [
   {
     title: "Multi-qubit circuit synthesis and Hermitian lattices",
     link: "https://arxiv.org/abs/2405.19302",
@@ -88,7 +101,7 @@ let papers = [
   }
 ];
 
-let theses = [
+const theses: Publication[] = [
   {
     title: "Hecke Operators for Algebraic Modular Forms",
     link: "/theses/Dissertation_Schoennenbeck.pdf",

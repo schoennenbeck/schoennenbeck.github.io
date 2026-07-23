@@ -1,8 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import Icon from "@/components/Icon.vue";
+import type { IconName } from "@/components/icons";
 import profile from "@/assets/Images/Profilbild.jpg";
 
-const contacts = [
+interface Contact {
+  icon: IconName;
+  label: string;
+  sub: string;
+  href: string;
+}
+
+const contacts: Contact[] = [
   {
     icon: "github",
     label: "GitHub",

@@ -1,8 +1,9 @@
-<script setup>
-import { software } from "@/assets/software.js";
+<script setup lang="ts">
+import { software } from "@/assets/software";
 import Icon from "@/components/Icon.vue";
 
-const resolve = (link) => import.meta.env.BASE_URL + link.replace(/^\//, "");
+const resolve = (link: string) =>
+  import.meta.env.BASE_URL + link.replace(/^\//, "");
 </script>
 
 <template>

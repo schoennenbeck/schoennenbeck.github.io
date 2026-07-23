@@ -1,10 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
 import Icon from "@/components/Icon.vue";
+import type { Publication } from "@/assets/papers";
 
-const props = defineProps({
-  info: { type: Object, required: true }
-});
+const props = defineProps<{ info: Publication }>();
 
 const collaborators = computed(() => props.info.collaborators || []);
 

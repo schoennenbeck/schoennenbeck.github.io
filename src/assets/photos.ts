@@ -5,7 +5,16 @@
 //   year        (optional) year the photo was taken
 //   location    (optional) where it was taken
 //   camera      (optional) gear / technical metadata
-let photos = [
+export interface Photo {
+  link: string;
+  title?: string;
+  description?: string;
+  year?: string;
+  location?: string;
+  camera?: string;
+}
+
+const photos: Photo[] = [
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1030.jpg",
     year: "2025",

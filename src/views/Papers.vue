@@ -1,5 +1,5 @@
-<script setup>
-import { papers, theses } from "@/assets/papers.js";
+<script setup lang="ts">
+import { papers, theses } from "@/assets/papers";
 import Publication from "@/components/Publication.vue";
 </script>
 

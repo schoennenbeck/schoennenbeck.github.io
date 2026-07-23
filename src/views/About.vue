@@ -1,12 +1,6 @@
-<script setup>
+<script setup lang="ts">
 import Icon from "@/components/Icon.vue";
-import {
-  profile,
-  experience,
-  skills,
-  languages,
-  education
-} from "@/assets/cv.js";
+import { profile, experience, skills, languages, education } from "@/assets/cv";
 
 function printCv() {
   window.print();

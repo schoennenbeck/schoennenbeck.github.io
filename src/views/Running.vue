@@ -1,7 +1,15 @@
-<script setup>
+<script setup lang="ts">
 import Icon from "@/components/Icon.vue";
+import type { IconName } from "@/components/icons";
 
-const links = [
+interface LinkItem {
+  icon: IconName;
+  title: string;
+  sub: string;
+  href: string;
+}
+
+const links: LinkItem[] = [
   {
     icon: "strava",
     title: "Strava",

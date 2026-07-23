@@ -1,7 +1,22 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, type RouteLocationRaw } from "vue-router";
 import Icon from "@/components/Icon.vue";
+import type { IconName } from "@/components/icons";
+
+interface NavChild {
+  label: string;
+  icon: IconName;
+  to?: RouteLocationRaw;
+  href?: string;
+}
+
+interface NavItem {
+  label: string;
+  icon: IconName;
+  to?: RouteLocationRaw;
+  children?: NavChild[];
+}
 
 const drawer = ref(false);
 const route = useRoute();
@@ -14,7 +29,7 @@ watch(
   }
 );
 
-const nav = [
+const nav: NavItem[] = [
   { to: { name: "Home" }, label: "Home", icon: "home" },
   { to: { name: "About" }, label: "CV", icon: "user" },
   {
@@ -80,7 +95,7 @@ const year = new Date().getFullYear();
               <Icon :name="item.icon" />
               <span>{{ item.label }}</span>
             </div>
-            <template v-for="child in item.children" :key="child.label">
+            <template v-for="child in item.children || []" :key="child.label">
               <router-link
                 v-if="child.to"
                 :to="child.to"

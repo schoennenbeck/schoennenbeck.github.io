@@ -1,8 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import Icon from "@/components/Icon.vue";
+import type { IconName } from "@/components/icons";
 import building from "@/assets/Images/hauptgebaeude.jpg";
 
-const links = [
+interface LinkItem {
+  icon: IconName;
+  title: string;
+  sub: string;
+  href: string;
+}
+
+const links: LinkItem[] = [
   {
     icon: "home",
     title: "Lehrstuhl für Algebra und Zahlentheorie",

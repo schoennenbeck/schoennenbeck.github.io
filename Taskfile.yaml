@@ -21,6 +21,11 @@ tasks:
     cmds:
       - npm run preview
 
+  typecheck:
+    desc: Type-check with vue-tsc (no emit)
+    cmds:
+      - npm run typecheck
+
   format:
     desc: Format all files with Prettier
     cmds:

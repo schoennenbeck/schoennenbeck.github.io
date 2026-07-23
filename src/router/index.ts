@@ -1,7 +1,17 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHashHistory,
+  type RouteRecordRaw
+} from "vue-router";
 import Home from "../views/Home.vue";
 
-const routes = [
+declare module "vue-router" {
+  interface RouteMeta {
+    title?: string;
+  }
+}
+
+const routes: RouteRecordRaw[] = [
   { path: "/", name: "Home", component: Home, meta: { title: "Home" } },
   {
     path: "/about",

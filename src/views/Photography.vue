@@ -1,13 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { computed } from "vue";
-import { photos } from "@/assets/photos.js";
+import { photos, type Photo } from "@/assets/photos";
 
-const resolve = (link) =>
+const resolve = (link: string) =>
   link.startsWith("http")
     ? link
     : import.meta.env.BASE_URL + link.replace(/^\//, "");
 
-const hasCaption = (p) =>
+const hasCaption = (p: Photo) =>
   Boolean(p.title || p.description || p.year || p.location || p.camera);
 
 const items = computed(() =>

@@ -1,7 +1,30 @@
 // CV content as plain data. Edit here to update the CV rendered in About.vue.
 // `points` entries may be a plain string or { lead, text } for a bold lead-in.
 
-const profile =
+export interface LeadText {
+  lead: string;
+  text: string;
+}
+
+export type Point = string | LeadText;
+
+export interface Experience {
+  org: string;
+  location: string;
+  role: string;
+  period: string;
+  points: Point[];
+}
+
+export interface Education {
+  org: string;
+  location: string;
+  degree: string;
+  period: string;
+  details: string[];
+}
+
+const profile: string =
   "Data generalist and PhD mathematician with a proven track record of " +
   "covering the entire data lifecycle from ideation and use case assessment " +
   "to implementing and training machine learning models, building robust and " +
@@ -10,7 +33,7 @@ const profile =
   "integration of Large Language Models (LLMs). My passion lies in utilizing " +
   "data science and AI to solve challenging real-world problems.";
 
-const experience = [
+const experience: Experience[] = [
   {
     org: "Comma Soft AG",
     location: "Bonn",
@@ -72,7 +95,7 @@ const experience = [
   }
 ];
 
-const skills = [
+const skills: LeadText[] = [
   {
     lead: "Technologies",
     text: "Python, Docker, Inference Frameworks (vLLM), Kubernetes"
@@ -95,13 +118,13 @@ const skills = [
   }
 ];
 
-const languages = [
+const languages: string[] = [
   "German, native speaker",
   "English, fluent",
   "French, basic knowledge"
 ];
 
-const education = [
+const education: Education[] = [
   {
     org: "RWTH Aachen",
     location: "Aachen",
