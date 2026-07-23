@@ -29,21 +29,21 @@ const items = computed(() =>
       <figure v-for="p in items" :key="p.link" class="shot">
         <a :href="p.src" target="_blank" rel="noopener" class="shot__frame">
           <img :src="p.src" :alt="p.title || 'Photograph'" loading="lazy" />
+          <figcaption v-if="p.caption" class="shot__cap">
+            <div v-if="p.title || p.year" class="shot__line">
+              <span v-if="p.title" class="shot__title">{{ p.title }}</span>
+              <span v-if="p.year" class="shot__year">{{ p.year }}</span>
+            </div>
+            <p v-if="p.description" class="shot__desc">
+              {{ p.description }}
+            </p>
+            <p v-if="p.location || p.camera" class="shot__meta">
+              <span v-if="p.location">{{ p.location }}</span>
+              <span v-if="p.location && p.camera" class="shot__dot">·</span>
+              <span v-if="p.camera">{{ p.camera }}</span>
+            </p>
+          </figcaption>
         </a>
-        <figcaption v-if="p.caption" class="shot__cap">
-          <div v-if="p.title || p.year" class="shot__line">
-            <span v-if="p.title" class="shot__title">{{ p.title }}</span>
-            <span v-if="p.year" class="shot__year">{{ p.year }}</span>
-          </div>
-          <p v-if="p.description" class="shot__desc muted">
-            {{ p.description }}
-          </p>
-          <p v-if="p.location || p.camera" class="shot__meta muted">
-            <span v-if="p.location">{{ p.location }}</span>
-            <span v-if="p.location && p.camera" class="shot__dot">·</span>
-            <span v-if="p.camera">{{ p.camera }}</span>
-          </p>
-        </figcaption>
       </figure>
     </div>
   </div>
@@ -83,6 +83,7 @@ const items = computed(() =>
 }
 .shot__frame {
   display: block;
+  position: relative;
 }
 .shot__frame img {
   display: block;
@@ -93,8 +94,31 @@ const items = computed(() =>
 .shot__frame:hover img {
   transform: scale(1.03);
 }
+
+/* Caption is an overlay that only reveals on hover/focus, so the grid stays
+   clean and image-first. */
 .shot__cap {
-  padding: 0.85rem 1rem 1rem;
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.6rem 1rem 0.9rem;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78),
+    rgba(0, 0, 0, 0.45) 55%,
+    rgba(0, 0, 0, 0)
+  );
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  pointer-events: none;
+}
+.shot__frame:hover .shot__cap,
+.shot__frame:focus-visible .shot__cap {
+  opacity: 1;
+  transform: translateY(0);
 }
 .shot__line {
   display: flex;
@@ -108,17 +132,27 @@ const items = computed(() =>
 .shot__year {
   flex: none;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  opacity: 0.85;
 }
 .shot__desc {
   margin: 0.4rem 0 0;
   font-size: 0.9rem;
+  opacity: 0.9;
 }
 .shot__meta {
   margin: 0.5rem 0 0;
   font-size: 0.82rem;
+  opacity: 0.85;
 }
 .shot__dot {
   margin: 0 0.4rem;
+}
+
+/* Touch devices have no hover — keep the caption visible so info isn't lost. */
+@media (hover: none) {
+  .shot__cap {
+    opacity: 1;
+    transform: none;
+  }
 }
 </style>
