@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { photos, type Photo } from "@/assets/photos";
+import Icon from "@/components/Icon.vue";
 
 const resolve = (link: string) =>
   link.startsWith("http")
     ? link
     : import.meta.env.BASE_URL + link.replace(/^\//, "");
 
-const hasCaption = (p: Photo) =>
-  Boolean(p.title || p.description || p.date || p.location || p.camera);
+const hasCaption = (p: Photo) => Boolean(p.title || p.description || p.date);
 
 // Format a "YYYY-MM" (or bare "YYYY") date as e.g. "Oct 2025" / "2025".
 const months = [
@@ -66,12 +66,17 @@ const items = computed(() =>
             <p v-if="p.description" class="shot__desc">
               {{ p.description }}
             </p>
-            <p v-if="p.location || p.camera" class="shot__meta">
-              <span v-if="p.location">{{ p.location }}</span>
-              <span v-if="p.location && p.camera" class="shot__dot">·</span>
-              <span v-if="p.camera">{{ p.camera }}</span>
-            </p>
           </figcaption>
+          <div v-if="p.location || p.camera" class="shot__badges">
+            <span v-if="p.location" class="shot__badge">
+              <span class="shot__badge-btn"><Icon name="map-pin" /></span>
+              <span class="shot__badge-info">{{ p.location }}</span>
+            </span>
+            <span v-if="p.camera" class="shot__badge">
+              <span class="shot__badge-btn"><Icon name="camera" /></span>
+              <span class="shot__badge-info">{{ p.camera }}</span>
+            </span>
+          </div>
         </a>
       </figure>
     </div>
@@ -168,19 +173,85 @@ const items = computed(() =>
   font-size: 0.9rem;
   opacity: 0.9;
 }
-.shot__meta {
-  margin: 0.5rem 0 0;
-  font-size: 0.82rem;
-  opacity: 0.85;
+/* Info badges: small icons (map-pin for location, camera for gear) that fade in
+   on image hover; hovering a single icon in turn reveals just its own info, so
+   the base hover stays uncluttered. */
+.shot__badges {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.4rem;
+  opacity: 0;
+  transform: translateY(-0.35rem);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
-.shot__dot {
-  margin: 0 0.4rem;
+.shot__frame:hover .shot__badges,
+.shot__frame:focus-visible .shot__badges {
+  opacity: 1;
+  transform: translateY(0);
+}
+.shot__badge {
+  position: relative;
+}
+.shot__badge-btn {
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 50%;
+  backdrop-filter: blur(2px);
+  font-size: 1.05rem;
+}
+/* Each panel drops below its own icon and wraps, so it never runs past the
+   frame edge (the card clips overflow) no matter how long the text is. */
+.shot__badge-info {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+  max-width: 13rem;
+  margin-top: 0.35rem;
+  padding: 0.4rem 0.6rem;
+  text-align: right;
+  line-height: 1.35;
+  color: #fff;
+  font-size: 0.82rem;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.6rem;
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.25rem);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s;
+}
+.shot__badge:hover .shot__badge-info {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-/* Touch devices have no hover — keep the caption visible so info isn't lost. */
+/* Touch devices have no hover — keep the caption and badge info visible. */
 @media (hover: none) {
   .shot__cap {
     opacity: 1;
+    transform: none;
+  }
+  .shot__badges {
+    opacity: 1;
+    transform: none;
+  }
+  .shot__badge-info {
+    opacity: 1;
+    visibility: visible;
     transform: none;
   }
 }
