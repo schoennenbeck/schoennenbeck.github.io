@@ -24,7 +24,8 @@ const photos: Photo[] = [
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1030.jpg",
     date: "2025-05",
     location: "Briançon (France)",
-    camera: "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 31mm · f/8 · 1/500s"
+    camera:
+      "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 31mm · f/8 · 1/500s"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/DSCF7972.JPG",
@@ -42,26 +43,29 @@ const photos: Photo[] = [
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/DSCF8122.JPG",
     date: "2025-11",
     location: "Bonn (Germany)",
-    camera: "FUJIFILM X-E4 · AF 27/2.8 · 27mm · f/4 · 1/160s"
+    camera: "FUJIFILM X-E4 · TTArtisan 27/2.8 · 27mm · f/4 · 1/160s"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1476.jpg",
     date: "2025-10",
     location: "Ferpècle (Switzerland)",
-    camera: "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 18mm · f/9 · 1/500s"
+    camera:
+      "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 18mm · f/9 · 1/500s"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1534.jpg",
     title: "Dent blanche dans la soirée",
     date: "2025-10",
     location: "Les Haudères (Switzerland)",
-    camera: "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 183mm · f/6.3 · 1/100s"
+    camera:
+      "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 183mm · f/6.3 · 1/100s"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1714.jpg",
     date: "2025-10",
     location: "Zermatt (Switzerland)",
-    camera: "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 37mm · f/11 · 1/160s"
+    camera:
+      "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 37mm · f/11 · 1/160s"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_0399.jpg",
@@ -79,13 +83,15 @@ const photos: Photo[] = [
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1054.jpg",
     date: "2025-05",
     location: "Briançon (France)",
-    camera: "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 43mm · f/8 · 1/500s"
+    camera:
+      "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 43mm · f/8 · 1/500s"
   },
   {
     link: "https://filedn.eu/ltxjR25HfoK4Gh3vztvvKTF/Gallery/IMG_1433.jpg",
     date: "2025-10",
     location: "Arolla (Switzerland)",
-    camera: "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 18mm · f/9 · 1/400s"
+    camera:
+      "Canon EOS R10 · Sigma 18-250mm f/3.5-6.3 DC OS HSM · 18mm · f/9 · 1/400s"
   }
 ];
 
