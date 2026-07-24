@@ -8,10 +8,37 @@ const resolve = (link: string) =>
     : import.meta.env.BASE_URL + link.replace(/^\//, "");
 
 const hasCaption = (p: Photo) =>
-  Boolean(p.title || p.description || p.year || p.location || p.camera);
+  Boolean(p.title || p.description || p.date || p.location || p.camera);
+
+// Format a "YYYY-MM" (or bare "YYYY") date as e.g. "Oct 2025" / "2025".
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec"
+];
+const formatDate = (date?: string) => {
+  if (!date) return "";
+  const [year, month] = date.split("-");
+  const m = month ? months[Number(month) - 1] : undefined;
+  return m ? `${m} ${year}` : (year ?? date);
+};
 
 const items = computed(() =>
-  photos.map((p) => ({ ...p, src: resolve(p.link), caption: hasCaption(p) }))
+  photos.map((p) => ({
+    ...p,
+    src: resolve(p.link),
+    caption: hasCaption(p),
+    dateLabel: formatDate(p.date)
+  }))
 );
 </script>
 
@@ -30,9 +57,11 @@ const items = computed(() =>
         <a :href="p.src" target="_blank" rel="noopener" class="shot__frame">
           <img :src="p.src" :alt="p.title || 'Photograph'" loading="lazy" />
           <figcaption v-if="p.caption" class="shot__cap">
-            <div v-if="p.title || p.year" class="shot__line">
+            <div v-if="p.title || p.dateLabel" class="shot__line">
               <span v-if="p.title" class="shot__title">{{ p.title }}</span>
-              <span v-if="p.year" class="shot__year">{{ p.year }}</span>
+              <span v-if="p.dateLabel" class="shot__year">{{
+                p.dateLabel
+              }}</span>
             </div>
             <p v-if="p.description" class="shot__desc">
               {{ p.description }}

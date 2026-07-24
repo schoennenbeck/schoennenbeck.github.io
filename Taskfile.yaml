@@ -51,3 +51,9 @@ tasks:
     cmds:
       - task: format:check
       - task: lint:check
+
+  sync:gallery:
+    desc: Sync src/assets/photos.ts with the gallery folder (EXIF date/camera/location)
+    cmds:
+      - npx tsx scripts/sync-gallery.ts
+      - npx prettier --write src/assets/photos.ts
